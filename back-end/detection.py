@@ -1,8 +1,6 @@
-import dlib
 import cv2
 import os
 from deepface import DeepFace
-
 class Detection:
     
 
