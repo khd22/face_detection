@@ -3,29 +3,9 @@ import React, { useState, useEffect } from "react";
 function App() {
   const ImageUploadForm = () => {
     const [file, setFile] = useState(null);
-    const [file2, setFile2] = useState(null);
     const [image, setImage] = useState(null);
     const [pageState, setpageState] = useState("main");
 
-    const handleFileChange = (e) => {
-      setFile(e.target.files[0]);
-    };
-
-    const handleFileDrop = (e) => {
-      e.preventDefault();
-      setFile(e.dataTransfer.files[0]);
-    };
-
-    const [modal, setModal] = useState(false);
-    const toggleModal = () => {
-      console.log("Toggling modal");
-      setModal(!modal);
-    };
-    if (modal) {
-      document.body.classList.add("active-modal");
-    } else {
-      document.body.classList.remove("active-modal");
-    }
     const goBack = () => {
       setFile(null);
       setpageState("main");
@@ -51,6 +31,8 @@ function App() {
         setpageState("result");
         setImage(objectURL);
       } catch (error) {
+        setFile(null);
+        setpageState("main");
         console.error("error uploading file", error);
       }
     };
