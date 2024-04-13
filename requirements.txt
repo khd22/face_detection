@@ -1,3 +1,5 @@
 flask
 deepface
 flask-cors
+tf-keras
+opencv-python
