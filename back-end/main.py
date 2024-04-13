@@ -4,6 +4,7 @@ from detection import Detection
 import os
 from werkzeug.utils import secure_filename
 import numpy as np
+
 app = Flask(__name__)
 CORS(app)
 UPLOAD_FOLDER = 'uploads'  # Directory to save uploaded images
@@ -38,6 +39,8 @@ def upload():
         image_reslt = detect.detect_faces(file_path)
 
         return send_file(image_reslt, as_attachment=True)
+    else:
+        return 'Unsupported file type. Please upload an image with one of the following extensions: png, jpg, jpeg, gif', 400
 
 if __name__ == "__main__":
     app.run(debug=True)

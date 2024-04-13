@@ -24,7 +24,7 @@ class Detection:
             text = f"Age: {age}, Gender: {gender}"
 
             # Display the predicted age and gender on the bounding box
-            cv2.putText(image, text, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (36, 255, 12), 3)
+            cv2.putText(image, text, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (36, 255, 12), 3)
             
         
             # Get the directory of the input image
