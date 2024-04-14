@@ -41,6 +41,11 @@ def upload():
         return send_file(image_reslt, as_attachment=True)
     else:
         return 'Unsupported file type. Please upload an image with one of the following extensions: png, jpg, jpeg, gif', 400
+# running locally
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
+#Hosting on Render:
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
