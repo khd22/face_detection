@@ -20,7 +20,7 @@ function App() {
       try {
         setpageState("loading");
         const response = await axios.post(
-          "http://localhost:5000/upload",
+          "https://face-detection-1.onrender.com/upload", // to host locally: "http://localhost:5000/upload"
           formData,
           {
             responseType: "blob",
